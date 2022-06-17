@@ -40,9 +40,10 @@ class HomeController extends Controller
                 ->orWhere('description', 'LIKE', "%{$request->search}%")
                 ->orWhere('text', 'LIKE', "%{$request->search}%")
                 ->get();
-            return view('search.index', ['articles' => $articles]);
+
+            return view('home', ['articles' => $articles]);;
         }else{
-            return redirect('/');
+            return back();
         }
 
     }
