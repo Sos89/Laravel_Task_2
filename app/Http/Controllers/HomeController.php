@@ -34,14 +34,14 @@ class HomeController extends Controller
     }
     public function searchPost(Request $request)
     {
-        if ($request->has('search' )== $request['search']){
+        if ($request->has('search' ) == $request['search']){
             $articles = Article::query()
                 ->where('title', 'LIKE', "%{$request->search}%")
                 ->orWhere('description', 'LIKE', "%{$request->search}%")
                 ->orWhere('text', 'LIKE', "%{$request->search}%")
                 ->get();
 
-            return view('home', ['articles' => $articles]);;
+            return view('home', ['articles' => $articles]);
         }else{
             return back();
         }

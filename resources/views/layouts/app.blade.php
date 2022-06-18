@@ -27,9 +27,24 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Home') }}
-                </a>
+                @if(Auth::user())
+                    @if(Auth::user()->is_admin == 1)
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            {{ config('Home', 'Home') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/admin') }}">
+                            {{ config('Admin', 'Admin') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ route('article.create') }}">
+                            {{ config('Create', 'Create') }}
+                        </a>
+                    @else<a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Home') }}
+                    </a>
+                    @endif
+                @endif
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
