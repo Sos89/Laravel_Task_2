@@ -31,7 +31,7 @@ Route::put('update/{id}', [ArticleController::class, 'update']);
 Route::get('edit/{id}', [ArticleController::class, 'edit']);
 Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 
-Route::get('search', [HomeController::class, 'searchPost'])->name('search');
+Route::post('search', [HomeController::class, 'searchPost'])->name('search');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['admin']], function () {

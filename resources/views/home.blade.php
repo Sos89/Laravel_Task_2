@@ -8,7 +8,7 @@
                     <div class="for_logo_google m-auto">
                         <img src="./../img/download.png" alt="">
                     </div>
-                    <form action="/search" method="get" class="text-center">
+                    <form action="/search" method="POST" class="text-center">
                         @csrf
                         <div id="search_div">
                             <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
