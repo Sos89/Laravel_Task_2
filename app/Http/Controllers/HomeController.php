@@ -32,20 +32,5 @@ class HomeController extends Controller
         $articles = Article::all();
         return view('/admin/admin')->with('articles', $articles);
     }
-    public function searchPost(Request $request)
-    {
-        if ($request->has('search' ) == $request['search']){
-            $articles = Article::query()
-                ->where('title', 'LIKE', "%{$request->search}%")
-                ->orWhere('description', 'LIKE', "%{$request->search}%")
-                ->orWhere('text', 'LIKE', "%{$request->search}%")
-                ->get();
-            return view('home', ['articles' => $articles]);
-        }else{
-            return back();
-        }
-
-    }
-
 
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,8 @@ Route::put('update/{id}', [ArticleController::class, 'update']);
 Route::get('edit/{id}', [ArticleController::class, 'edit']);
 Route::get('show/{id}', [ArticleController::class, 'show'])->name('show');
 
-Route::post('search', [HomeController::class, 'searchPost'])->name('search');
+//Route::post('search', [HomeController::class, 'searchPost'])->name('search');
+Route::post('search', [SearchController::class, 'searchPost'])->name('search');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['admin']], function () {

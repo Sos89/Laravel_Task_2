@@ -32,8 +32,8 @@
                                     <td>{{$article->text}}</td>
                                     <td><img src="cover/{{$article->cover}}" class="img-fluid"
                                              style="max-width: 100px; max-height: 100px" alt=""></td>
-                                    <td><a class="btn btn-sm btn-outline-secondary" href=" /show/{{$article->id }}">View</a></td>
-                                    <td><a class="btn btn-sm btn-outline-success"
+                                    <td><a class="btn btn-sm btn-info" href=" /show/{{$article->id }}">View</a></td>
+                                    <td><a class="btn btn-sm btn-warning"
                                            href=" /edit/{{$article->id }}">Update</a>
                                     </td>
                                     <th>
@@ -41,7 +41,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" onclick="return confirm('Are you sore')"
-                                                    class="btn btn-outline-danger btn-sm">Delete
+                                                    class="btn btn-danger btn-sm">Delete
                                             </button>
                                         </form>
                                     </th>
