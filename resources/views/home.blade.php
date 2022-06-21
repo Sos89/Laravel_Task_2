@@ -19,13 +19,13 @@
                     </form>
                 </div>
 
-                <div class="col-md-12">
-                    <div style="display: flex">
+                <div class="col-md-12 text-center m-auto">
+                    <div style="display: flex" class="m-auto">
                     @if(isset($articles))
                         @foreach($articles as $article)
-                        <div class="card m-2" style="width: 18rem;">
-                            <div>
-                                <img src="cover/{{$article->cover}}" alt="">
+                        <div class="card m-2 m-auto" style="width: 18rem;">
+                            <div class=" text-center">
+                                <img src="cover/{{$article->cover}}" class="img-fluid" alt="">
                             </div>
                             <div class="card-body">
                                 <h4><a href=" /show/{{$article->id }}">{{$article->title}}</a></h4>
