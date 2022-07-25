@@ -1,16 +1,20 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use App\Models\User;
+namespace Database\Seeders;
 
-class UsersSeeder extends Seeder {
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+class UserSeeder extends Seeder
+{
     /**
      * Run the database seeds.
      *
-     * @return void */
-
-
-    public function run() {
+     * @return void
+     */
+    public function run()
+    {
         User::truncate();
         $users = [
             [
@@ -22,25 +26,24 @@ class UsersSeeder extends Seeder {
             [
                 'name' => 'User',
                 'email' => 'user@gmail.com',
-                'password' => '13456',
+                'password' => '123456',
                 'is_admin' => null,
             ],
             [
                 'name' => 'Client',
                 'email' => 'client@gmail.com',
-                'password' => '13456',
+                'password' => '123456',
                 'is_admin' => null,
             ]
         ];
-
         foreach($users as $user)
         {
             User::create([
                 'name' => $user['name'],
                 'email' => $user['email'],
-                'password' => Hash::make($user['password'])
+                'password' => Hash::make($user['password']),
+                'is_admin' => $user['is_admin']
             ]);
         }
-
     }
 }

@@ -4,6 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div>
+
+                </div>
                 <div class="google_search">
                     <div class="for_logo_google m-auto">
                         <img src="./../img/download.png" alt="">
@@ -19,7 +22,7 @@
                     </form>
                 </div>
 
-                <div class="col-md-12 text-center m-auto">
+                <div class="col-md-12 text-center m-auto mt-5">
                     <div style="display: flex" class="m-auto">
                     @if(isset($articles))
                         @foreach($articles as $article)

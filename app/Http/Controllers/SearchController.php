@@ -30,7 +30,7 @@ class SearchController extends Controller
                   }
               }
             }
-            $result = array_merge($title, $desc,$text);
+            $result = array_merge($title, $desc, $text);
             return view('home', ['articles' => $result]);
         }else{
             return back();
