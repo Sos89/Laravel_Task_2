@@ -19,7 +19,7 @@
         <div class="show_img">
             @foreach($articles->images as $img)
                 <div class="view_images">
-                    <img src="./../images/{{$img->image}}" class="img-fluid m-2" alt="">
+                    <img src="./../images/{{$img->image}}" class="img-fluid m-2 img" alt="">
                 </div>
             @endforeach
         </div>

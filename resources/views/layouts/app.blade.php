@@ -22,10 +22,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/show.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/edit.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-sm">
             <div class="container">
                 @if(Auth::user())
                     @if(Auth::user()->is_admin == 1)
