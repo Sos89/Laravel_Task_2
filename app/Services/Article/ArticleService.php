@@ -2,6 +2,7 @@
 
 namespace App\Services\Article;
 
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -45,17 +46,9 @@ class ArticleService
         $articles = Article::find($id);
         return view('show')->with('articles', $articles);
     }
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|max:25',
-            'description' => 'required',
-            'text' => 'required',
-            'cover' => 'required',
-            'images' => 'required'
-        ]);
-
-        if ($validated){
+        if ($request->validated()){
             if ($request->hasFile("cover")) {
                 $file = $request->file("cover");
                 $imageName = time() . '_' . $file->getClientOriginalName();

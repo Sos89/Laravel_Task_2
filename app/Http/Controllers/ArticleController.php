@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use App\Models\Image;
 use App\Models\Article;
 use App\Services\Article\ArticleService;
@@ -15,7 +16,7 @@ class ArticleController extends BaseController
         return view('/admin/create');
     }
 
-    public function store(ArticleService $service, Request $request)
+    public function store(ArticleService $service, ArticleRequest $request)
     {
         $stor = $service->store($request);
         return $stor;
